@@ -9,7 +9,7 @@ async function loadPosts() {
     try {
         // fetch를 통해 post_list.json 파일을 가져옴.
         // await는 해당 작업이 끝날 때가지 기다리라는 코드.
-        const response = await fetch('../post_list.json');
+        const response = await fetch('post_list.json');
 
         // 만약 응답이 ok가 아니라면? 오류 발생.
         if (!response.ok) {

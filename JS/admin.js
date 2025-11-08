@@ -84,7 +84,7 @@ function generateNewJson() {
 
     // 4. JSON 파일 구조에 맞게 새 포스트 객체 생성
     const newPost = {
-        post_file_name: `/POSTS/post1/post${num}.html`,
+        post_file_name: `./POSTS/post1/post${num}.html`,
         post_title: title,
         post_year: year,
         post_month: month,

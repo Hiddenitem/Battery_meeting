@@ -6,5 +6,13 @@
         "post_month": 11,
         "post_day": 8,
         "post_summary": "논문에서의 Pearson 상관 분석에 대해 조금 더 조사해보았습니다."
+    },
+    {
+        "post_file_name": "./POSTS/post2/post2.html",
+        "post_title": "MAML-CNN-LSTM 모델 논문 Contribution 분석",
+        "post_year": 2025,
+        "post_month": 11,
+        "post_day": 20,
+        "post_summary": "11/19일 진행한 배터리 미팅에서 MAML-CNN-LSTM 모델의 차이점만을 따로 조사해보았습니다."
     }
 ]

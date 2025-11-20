@@ -43,7 +43,7 @@ function specify_posts(posts) {
     console.log(path);
 
     // 2. 현재 글의 인덱스를 가져옴.
-    const current_post_index = posts.findIndex(post => post.post_file_name === path);
+    const current_post_index = posts.findIndex(post => post.post_file_name === `.${path}`);
 
     // 3. 이전글, 다음글 html 코드 가져오기
     var next_post_button_tag = document.getElementById("next_post_button");
@@ -60,7 +60,7 @@ function specify_posts(posts) {
     // 만약, 현재 글의 인덱스가 0보다 크다면? == 이전글이 있다.
     if (current_post_index > 0) {
         const prevPost = posts[current_post_index - 1];
-        previous_button_tag.href = prevPost['post_file_name'];
+        previous_button_tag.href = `/${prevPost['post_file_name']}`;
     }
     // 0보다 작다면? == 이전글이 없으니, 버튼 안보이게 하기.
     else {
@@ -70,7 +70,7 @@ function specify_posts(posts) {
     // 다음글에 대한 것도 마찬가지로 진행.
     if (current_post_index < posts.length - 1) {
         const nextPost = posts[current_post_index + 1];
-        next_post_button_tag.href = nextPost['post_file_name'];
+        next_post_button_tag.href = `/${nextPost['post_file_name']}`;
     }
     else {
         next_post_button_tag.style.display = 'none';

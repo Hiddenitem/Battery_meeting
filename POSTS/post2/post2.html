@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주제 1: [첫 번째 공부 주제]</title>
+    <title>MAML-CNN-LSTM 모델 논문 Contribution 분석</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
 
     <div class="HEADER">
         <header>
-            <h1>Pearson 상관 분석 추가 학습 자료</h1>
-            <p>논문에서의 Pearson 상관 분석에 대한 추가적인 설명</p>
+            <h1>MAML-CNN-LSTM 모델 논문 Contribution 분석</h1>
+            <p>논문 분석</p>
             <a href="../../index.html" class="normal_button">전체 목록으로 가기</a>
         </header>
     </div>
@@ -20,70 +28,52 @@
         <main>
             <article class="post-content">
                 
-                <h1>Pearson 상관 분석에 대하여</h1>
-                <p class="post-meta">작성일: 2025년 11월 8일</p>
+                <h1>MAML-CNN-LSTM 모델 논문 Contribution 분석</h1>
+                <p class="post-meta">작성일: 2025년 11월 20일</p>
 
                 <p>
-                    2025-11-07에 진행되었었던 배터리 미팅 이후, 추가적인 학습 자료에 대한 포스트입니다.
+                    MAML-CNN-LSTM 모델 논문에 대해서 모델의 Contribution을 따로 요약해보았습니다.
                 </p>
+                <hr>
 
-                <h2>1. 서론</h2>
+                <h2>1. MAML-CNN-LSTM 모델 논문</h2>
+                <img src="./image.png">
+                <h3>1. 주요 Contribution</h3>
                 <p>
-                    <strong style="font-size : 20px; text-align: center;">An Ensemble Learning-Based Data-Driven Method <br> for Online State-of-Health Estimation of Lithium-Ion Batteries</strong><br>
-                    <br>
-                    <p>위 논문에서 등장하는 Pearson 상관 분석 기법에 대해 추가적으로 조사해보았습니다.</p>
-                    논문에서 피어슨 상관분석 기법이 등장하는 부분은 논문에서 <br>
-                    <em>III. HEALTH INDICATOR EXTRACTION AND EVALUATION</em> 속, <br>
-                    <em>C. Health Indicator Selection</em> 부분에서 등장합니다. <br>
-
-                    <blockquote>
-                        C. Health Indicator Selection<br>
- Although the DSCVR can describe the aging trend of the
- battery, DSCVRs with different voltage ranges, namely differ
-ent pairs of Vmax and Vmin, may describe different aging trends.
- In other words, the DSCVR and battery SOH are correlated.
- For data-driven learning models, a highly correlative feature
- could result in higher output accuracy. In light of this, Pearson
- correlation analysis [28] is used in this article to quantitatively
- evaluate the relationship between different DSCVR values
- and the practical SOH to select the most correlative health
- indicator. The Pearson correlation coefficient is calculated as...
-                    </blockquote>
-
-                    위
-
-                    <br><br>
-                    단락을 나누어 가독성을 높입니다.
-
-
-                    <strong>이렇게 텍스트를 강조</strong>할 수도 있고, 
-                    <em>이탤릭체</em>도 사용할 수 있습니다.
+                    - 논문에선, 다른 딥러닝 모델들이 <strong>학습으로 사용된 배터리와, 직접 SOH를 추정할러는 배터리가 다를 시, 제대로 예측을 진행하지 못하는 일반화의 문제점이 있다 비판합니다.</strong>
                 </p>
-
-                <h2>2. 중요한 인용 (Blockquote)</h2>
                 <p>
-                    교수님 말씀이나 책의 중요 구절은 인용문으로 강조할 수 있습니다.
+                    - 따라서, 논문에선 기존 딥러닝 모델인 CNN-LSTM 모델에 메타 학습 기법중 하나인 <strong>MAML(Model-agnostic Meta-learning Model)</strong>을 사용하여, 이 일반화의 문제를 해결할러 합니다.
                 </p>
-                <blockquote>
-                    <p>"이 부분은 시험에 나올 수 있으니 꼭 공부하도록 하세요."</p>
-                </blockquote>
-
-                <h2>3. 코드 예시 (선택 사항)</h2>
+                <img src="./TABLE1.png">
                 <p>
-                    만약 프로그래밍 관련 내용이라면 코드 블럭을 사용할 수 있습니다.
+                    TABLE 1에 모델의 메타 학습과 관련된 과정이 잘 설명되어있습니다.
                 </p>
-                <pre><code>function helloWorld() {
-    console.log("Hello, world!");
-}</code></pre>
-
-                <h2>4. 결론</h2>
+                <h3>1) Pre-training process(사전 학습 과정)</h3>
                 <p>
-                    학습한 내용을 바탕으로 얻은 결론이나 느낀 점을 서술합니다.
+                    모델이 학습하는 과정에서, <strong>어떠한 타깃 배터리가 등장하더라도, 적은 양의 데이터와 적은 양의 파라미터 업데이트를 사용하여</strong> 적응할 수 있도록,  
+                    <strong> CNN-LSTM 모델의 최적의 파라미터(가중치, 편향) 값을 찾는 과정입니다.</strong>
                 </p>
+                <p>
+                    논문에서는 NASA 배터리 데이터셋을 사용하여서, 위 사전학습 과정을 거치면서, <strong>모델의 가장 최적의 파라미터 값을 찾습니다.</strong>
+                </p>
+                <h3>2) Fine-tuning process(미세-조정 과정)</h3>
+                <p>
+                    타깃 배터리 데이터셋에 맞추어서, <strong>사전학습 과정에서 구한 최적의 파라미터 값을 사용하여</strong> 타깃 배터리에 가장 최적의 모델 파라미터로 미세 조정하는 과정입니다.
+                </p>
+                <h3>위 일련의 과정을 통하여, 사전 학습 과정에선 CNN-LSTM 모델이 어떠한 타깃 배터리가 오더라도 빠르게 적응할 수 있는 최적의 파라미터를 구하고(이것을, MAML 프레임워크의 목표 구하기 과정이라고 합니다.)</h3>
+                <h3>미세-조정 과정에선, 사전 학습 과정에서 구한 최적의 파라미터를 사용하여, <strong>타깃 배터리에 가장 최적인 파라미터로, 모델들을 조정합니다.</strong></h3>
+                <p>
+                    이렇게 하면, CNN-LSTM 모델은, 타깃 배터리의 데이터가 적어도, 가장 적은 조정을 통하여 사전 학습된 배터리와 여러 특징이 다른 타깃 배터리라 하더라도, 빠르게 적응하여 SOH를 추정할 수 있는 능력을 갖게 됩니다.
+                </p>
+                <p>
+                    즉, 모델의 일반화 성능을 뛰게 만드는 겁니다.
+                </p>
+                <h3>이런 방식을 통하여, 서로 다른 도메인이어도 차이를 극복할 수 있는 도메인 Adaptation이 구현될 수 있습니다.</h3>
 
                 <div class="button_container">
                     <a href="#" class="normal_button previous_post" id="previous_post_button">&larr; 이전글</a>
-                    <a href="../index.html" class="normal_button">전체 목록으로 돌아가기</a>
+                    <a href="../../index.html" class="normal_button">전체 목록으로 돌아가기</a>
                     <a href="#" class="normal_button next_post" id="next_post_button">&rarr; 다음글</a>
                 </div>
 
@@ -92,10 +82,23 @@ ent pairs of Vmax and Vmin, may describe different aging trends.
     </div>
 
     <footer>
-        <p>&copy; 2025 [본인 이름]. GitHub Pages로 제작되었습니다.</p>
+        <p>&copy; 2025 [김훈]. GitHub Pages로 제작되었습니다.</p>
     </footer>
 
     <script type="text/javascript" src="../../JS/add_button_post_data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMathInElement(document.body, {
+                // KaTeX가 인식할 구분 기호를 설정합니다
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},  // 블록(가운데정렬) 수식
+                    {left: '$', right: '$', display: false},   // 인라인(문장 내) 수식
+                    {left: '\\[', right: '\\]', display: true}, // LaTeX 기본 블록
+                    {left: '\\(', right: '\\)', display: false}  // LaTeX 기본 인라인
+                ]
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -43,7 +43,7 @@ function specify_posts(posts) {
     console.log(path);
 
     // 2. 현재 글의 인덱스를 가져옴.
-    const current_post_index = posts.findIndex(post => post.post_file_name === `.${path}`);
+    const current_post_index = posts.findIndex(post => post.post_file_name === `./Battery_meeting${path}`);
 
     // 3. 이전글, 다음글 html 코드 가져오기
     var next_post_button_tag = document.getElementById("next_post_button");
